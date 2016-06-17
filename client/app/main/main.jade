@@ -1,19 +1,30 @@
+div.main-view
+  header.main-header some header
+  a(href="#/login") Go To login
+  form(ng-submit="$ctrl.addThing()")
+    label thing name
+    input(type="text", ng-model="$ctrl.newThing")
+    input(type="submit", value="add thing")
+  article
+    section(ng-repeat="thing in $ctrl.awesomeThings", ng-click="$ctrl.deleteThing(thing)")
+      br
+      |{{thing.name}}
 //header#banner.hero-unit
 //  .container
 //    h1 'Allo, 'Allo!
 //    p.lead Kick-start your next web app with Angular Fullstack
 //    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
-header
-  h1 molame
-form(ng-submit="$ctrl.addThing()")
-  label thing name
-  input(type="text", ng-model="$ctrl.newThing")
-  input(type="submit")
-.container
-  .row
-    .col-lg-12
-      h1.page-header Features: f
-      ul(ng-repeat='thing in $ctrl.awesomeThings')
-        li
-          a(href='/', uib-tooltip='{{thing.info}}')
-            | {{thing.name}} + {{thing.name}}
+//header
+//  h1 molame
+//form(ng-submit="$ctrl.addThing()")
+//  label thing name
+//  input(type="text", ng-model="$ctrl.newThing")
+//  input(type="submit")
+//.container
+//  .row
+//    .col-lg-12
+//      h1.page-header Features: f
+//      ul(ng-repeat='thing in $ctrl.awesomeThings')
+//        li
+//          a(href='/', uib-tooltip='{{thing.info}}')
+//            | {{thing.name}} + {{thing.name}}

@@ -1,0 +1,10 @@
+.login{
+  @include pad(1em 1.5em);
+  margin: 50vh auto 0;
+  @include span-columns(10);
+  @include shift(1);
+  transform: translateY(-60%);
+  height:  16em;
+  background-color: antiquewhite;
+  @include prefixer(border-radius, .5em, moz webkit spec);
+}

@@ -1,0 +1,17 @@
+mixin message(formName, inputName)
+  <div ng-messages="#{formName}.#{inputName}.$error">
+  <p ng-message="required">This field is required</p>
+  <p ng-message="minlength">This field is too short</p>
+  <p ng-message="maxlength">This field is too long</p>
+  <p ng-message="required">This field is required</p>
+  <p ng-message="email">This needs to be a valid email</p>
+  </div>
+.login
+  form(ng-submit="$ctrl.login()", name="formLogin")
+    label username
+    input(type="text", ng-model="$ctrl.email", name="email",required, ng-minlength="5" ,ng-maxlength="20" )
+    label username
+    input(type="password", ng-model="$ctrl.password", name="password")
+    input(type="submit", value="Login")
++message("loginForm", "email")
++message("loginForm", "password")

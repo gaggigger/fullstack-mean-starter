@@ -6,10 +6,10 @@ describe('Component: mainComponent', function() {
   beforeEach(module('mokaApp'));
   beforeEach(module('stateMock'));
 
-  var scope;
-  var mainComponent;
-  var state;
-  var $httpBackend;
+  let scope;
+  let mainComponent;
+  let state;
+  let $httpBackend;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function(_$httpBackend_, $http, $componentController, $rootScope, $state) {

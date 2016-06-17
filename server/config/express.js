@@ -18,6 +18,10 @@ import config from './environment';
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import mongoose from 'mongoose';
+import passport from 'passport';
+import jwt  from 'jsonwebtoken';
+
+
 var MongoStore = connectMongo(session);
 
 export default function(app) {
@@ -33,7 +37,13 @@ export default function(app) {
 
   app.set('appPath', path.join(config.root, 'client'));
   app.use(express.static(app.get('appPath')));
+
+// Log requests to console
   app.use(morgan('dev'));
+
+  // Initialize passport for use
+  app.use(passport.initialize());
+
 
   app.set('views', config.root + '/server/views');
   app.set('view engine', 'jade');
@@ -56,15 +66,19 @@ export default function(app) {
     })
   }));
 
+  // Bring in defined Passport Strategy
+  require('./passport')(passport);
+
   /**
    * Lusca - express server security
    * https://github.com/krakenjs/lusca
    */
   if (env !== 'test' && !process.env.SAUCE_USERNAME) {
     app.use(lusca({
-      csrf: {
-        angular: true
-      },
+      // csrf: {
+      //   angular: true
+      // },
+      csrf: false,
       xframe: 'SAMEORIGIN',
       hsts: {
         maxAge: 31536000, //1 year, in seconds
