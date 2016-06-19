@@ -10,8 +10,17 @@ class LoginComponent {
   }
 
   login(){
+    let user = {
+      email: this.email,
+      password: this.password
+    };
     // this.toastr.success('Hello world!', 'Toastr fun!');
-    
+    this.API.all('users/auth/login').post(user).then((resp)=>{
+      console.log(resp.data);
+    });
+  }
+  authenticate(provider){
+    // this.$auth.authenticate(provider);
   }
 }
 

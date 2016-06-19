@@ -28,9 +28,10 @@ textarea {
 #{$all-text-inputs},
 select[multiple] {
   background-color: $base-background-color;
-  border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $form-box-shadow;
+  border: none;
+  border-bottom: $base-border;
+  border-radius: 0;
+  box-shadow: none;
   box-sizing: border-box;
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
@@ -43,7 +44,7 @@ select[multiple] {
 
   &:focus {
     border-color: $action-color;
-    box-shadow: $form-box-shadow-focus;
+    box-shadow: none;
     outline: none;
   }
 
@@ -79,5 +80,15 @@ textarea {
 select {
   margin-bottom: $small-spacing;
   max-width: 100%;
-  width: auto;
+  width: 40%;
+  line-height: 1.4em;
+  height:  2.8em;
+  @include padding(10px 39px 10px 15px);
+  border: 2px $turquoise $base-border-color;
+  border-radius: $border-radius-base;
+  @include prefixer(box-shadow, none);
+  outline: none;
+  background-color: $turquoise;
+  color: $inverse;
 }
+

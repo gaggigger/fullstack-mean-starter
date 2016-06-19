@@ -11,6 +11,7 @@
 
 import _ from 'lodash';
 import User from './user.model';
+import bcrypt from 'bcrypt';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -118,4 +119,52 @@ export function registerUser(req, res) {
   //     res.json({ success: true, message: 'Successfully created new user.' });
   //   });
   // }
+}
+export function authenticate(req,resp) {
+  User.findOne({email: req.body.email}, function(err, user) {
+    if (err) {
+      resp.json({
+        type: false,
+        data: "Error occured: " + err
+      });
+    } else {
+
+      bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
+        if (err || !isMatch) {
+          resp.json({
+            type: false,
+            data: "error"
+          })
+        }else {
+          resp.json({
+            type: true,
+            data: user
+          })
+        }
+      });
+      // if( user.comparePassword(req.body.password, user.password) ){
+      //   resp.json({
+      //     type: false,
+      //     data: "*__*"
+      //   })
+      // } else {
+      //   resp.json({
+      //     type: true,
+      //     data: "^__^"
+      //   })
+      // }
+      // if (user) {
+      //   resp.json({
+      //     type: true,
+      //     data: user,
+      //     token: user.token
+      //   });
+      // } else {
+      //   resp.json({
+      //     type: false,
+      //     data: "Incorrect email/password"
+      //   });
+      // }
+    }
+  });
 }

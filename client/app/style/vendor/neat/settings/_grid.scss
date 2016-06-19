@@ -4,13 +4,14 @@
 ///
 /// @type Number (Unit)
 
-$column: modular-scale(3, 1em, $golden) !default;
-
+//$column: modular-scale(3, 1em, $golden) !default;
+$column: 44 !default;
 /// Sets the relative width of a single grid gutter. The unit used should be the same one used to define `$column`. To learn more about `modular-scale()` see [Bourbon docs](http://bourbon.io/docs/#modular-scale). Set with the `!global` flag.
 ///
 /// @type Number (Unit)
 
-$gutter: modular-scale(1, 1em, $golden) !default;
+//$gutter: modular-scale(1, 1em, $golden) !default;
+$gutter: 4 !default;
 
 /// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the `media()` mixin. Set with the `!global` flag.
 ///
@@ -22,7 +23,8 @@ $grid-columns: 12 !default;
 ///
 /// @type Number (Unit)
 ///
-$max-width: 1200px !default;
+//$max-width: 1200px !default;
+$max-width: 1366px !default;
 
 /// When set to true, it sets the box-sizing property of all elements to `border-box`. Set with a `!global` flag.
 ///

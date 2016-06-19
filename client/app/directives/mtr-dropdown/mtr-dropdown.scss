@@ -1,0 +1,62 @@
+.mtr-dropdown{
+   @include span-columns(4);
+  background: #999;
+  .outer-container{
+    cursor: pointer;
+    span{
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      color: $inverse;
+      font-weight: 700;
+      font-size: 16px;
+      background: $turquoise;
+      display: block;
+      padding: 0 50px 0 30px;
+      position: relative;
+      cursor: pointer;
+      &:after{
+        content: '\25BC';
+        position: absolute;
+        right: 0px;
+        top: 15%;
+        width: 50px;
+        text-align: center;
+        font-size: 12px;
+        padding: 10px;
+        height: 70%;
+        line-height: 24px;
+        border-left: 1px solid #ddd;
+      }//span:after
+    }//span
+  }//outer-container
+  .active {
+    span:after{
+      content: '\25B2';
+    }
+  }
+  ul{
+    background: #999;
+    //margin-top: -.5em;
+    //@include prefixer(border-top, 2px solid #999);
+    li{
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      color: $inverse;
+      font-weight: 700;
+      font-size: 16px;
+      background: $turquoise;
+      display: block;
+      padding: 0 50px 0 30px;
+      position: relative;
+      cursor: pointer;
+      margin-top: .5em;
+      span{
+        position: absolute;
+        right: 1.5em;
+
+      }
+    }//li
+  }//ul
+}

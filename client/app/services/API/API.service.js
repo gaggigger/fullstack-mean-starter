@@ -18,14 +18,14 @@ class APIService {
            */
           if(response.status === 422 || response.status === 401 ){
             for (let error in response.data.errors){
-              return ToastService.error("Error", response.data.errors[error][0]);
+              return ToastService.error('Error', response.data.errors[error][0]);
             }//end-for
           }//end-if
           /*
             if server response is : 500 =  Internal Server Error
            */
           if (response.status === 500 ){
-            return ToastService.error("Error", response.statusText);
+            return ToastService.error('Error', response.statusText);
           }
         })
 

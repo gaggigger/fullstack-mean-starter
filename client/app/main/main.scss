@@ -1,18 +1,32 @@
+html, body, .app-ui-view{
+  height: 100%;
+}
 .main-view{
+  height: 100%;
   @include outer-container;
-  .main-header{
+  height: 100%;
+  .header{
+    @include span-columns(12);
+    height: 20%;
+    background-color: palevioletred;
+  }//.header
+  .sidebar{
     @include span-columns(4);
-    background-color: forestgreen;
-    height: 4em;
-    line-height: 4em;
-  }
-  article{
-    @include span-columns(6);
-    @include shift(4);
-    section{
-      background-color: #0b97c4;
-      cursor: pointer;
-      margin-bottom: 2px;
+    //height:  800px;
+    height: 80%;
+    background-color: #4F4D3F;
+  }//.sidebar
+  .content{
+    @include span-columns(8);
+    height: 80%;
+    background-color: #ff9d40;
+    display: inline-block;
+    overflow-y:auto;
+    .scrollable-view{
+      @include span-columns(12);
     }
+  }//.content
+  .mtr-select{
+    background-color: white;
   }
 }
