@@ -1,18 +1,23 @@
-.main-view
-  header(class="header") {{$ctrl.date}}
-  section(class="sidebar")
-    date-dropper(placeholder="dd/mm/yyyy", ng-model="$ctrl.date", date-format="d/m/Y", dd-color="#F55")
-
+.main-view(ng-init="ddSelectOptions = [{text:'Option1',value:'one',iconCls:''}, {text:'Option2',value:'one',iconCls:'ion-ionic'},{text:'Option3',value:'one',iconCls:'ion-ios-infinite'}]")
+  header(class="header")
+    .sidebar-trigger
+      span(class="icon ion-android-menu")
+  span {{ddSelect}}
+  //section(class="sidebar")
+  //  date-dropper(placeholder="dd/mm/yyyy", ng-model="$ctrl.date", date-format="d/m/Y", dd-color="#F55")
   section(class="content")
-    mtr-dropdown ff
+    //h1 Dropdown select
+    //p you have selected {{ddSelected }}
+    div(dropdown-select="ddSelectOptions",  dropdown-model="ddSelect", dropdown-item-label="text" )
+    input(type="text")
+    //input(type="color")
+    textarea
+    input(type="number")
+    input(type="password")
+    input(type="search")
+    input(type="password")
+    input(type="search")
+    input(type="search")
+    input(type="search")
+    input(type="search")
     .scrollable-view
-      //|main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>main<br/>
-
-
-//wheelnav(wn-name="main-wheel", wn-radius="100", wn-navangle="90", wn-slicepath="DonutSlice", wn-colors="#E34C26,#F06529", wn-rotateoff="true")
-//form(ng-submit="login")
-//  label username
-//  input(type="text", ng-model="$ctrl.username")
-//  label password
-//  input(type="password", ng-model="$ctrl.password")
-//  input(type="submit", value="login")

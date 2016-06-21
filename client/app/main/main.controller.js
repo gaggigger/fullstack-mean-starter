@@ -3,11 +3,10 @@
 (function() {
 
   class MainController {
-
     constructor($http, ToastService) {
       this.$http = $http;
       this.awesomeThings = [];
-      ToastService.success("my name os");
+      // ToastService.success("my name os");
     }
 
     $onInit() {

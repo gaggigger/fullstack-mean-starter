@@ -6,18 +6,36 @@ html, body, .app-ui-view{
   @include outer-container;
   height: 100%;
   .header{
+    %header-nav-icon{
+      @include span-columns(2);
+      font-size:    2.8em;
+      line-height: 2em;
+      height: 100%;
+      //@include margin(null .2em null .2em);
+      span{
+        @include prefixer(transition, color .1s ease-in);
+        cursor: pointer;
+        &:hover{
+          color: $inverse;
+        }
+        margin: .5em;
+      }
+    }
     @include span-columns(12);
-    height: 20%;
+    height: 15%;
     background-color: palevioletred;
+    .sidebar-trigger{
+      @extend %header-nav-icon;
+    }
   }//.header
-  .sidebar{
-    @include span-columns(4);
-    //height:  800px;
-    height: 80%;
-    background-color: #4F4D3F;
-  }//.sidebar
+  //.sidebar{
+  //  @include span-columns(4);
+  //  //height:  800px;
+  //  height: 80%;
+  //  background-color: #4F4D3F;
+  //}//.sidebar
   .content{
-    @include span-columns(8);
+    @include span-columns(12);
     height: 80%;
     background-color: #ff9d40;
     display: inline-block;

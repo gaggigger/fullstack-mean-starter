@@ -1,8 +1,9 @@
-.mtr-dropdown
-  .outer-container(ng-click="$ctrl.childMenuVisibility = !$ctrl.childMenuVisibility", class="noselect", ng-class="($ctrl.childMenuVisibility)?'active':''")
-    span Choose an animal
-    input(type="hidden" name="mtr-dropdown")
-  ul(ng-show="$ctrl.childMenuVisibility")
-    li(ng-repeat="mtrOption in vm.mtrOptions", class="noselect") {{mtrOption.text}}
-      span(ng-show="mtrOption.hasIcon", class="with-icon",ng-class="'icon '+mtrOption.icon")
+//.mtr-dropdown
+//  .outer-container(ng-click="vm.childMenuVisibility = !vm.childMenuVisibility", class="noselect", ng-class="(vm.childMenuVisibility)?'active':''", ng-blur="window.alert('blured')")
+//    span {{dropdownModel[labelField]}}
+//    input(type="hidden" name="mtr-dropdown")
+//  ul(ng-if="vm.childMenuVisibility === true")
+//    li(ng-repeat="mtrOption in vm.mtrOptions", class="noselect", ng-click="vm.updateSelected(mtrOption)") {{mtrOption.text}}
+//      span(ng-show="mtrOption.icon !== null", class="with-icon",ng-class="'icon '+mtrOption.icon")
 
+//

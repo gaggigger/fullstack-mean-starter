@@ -1,3 +1,20 @@
+%base-forms{
+  height: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  padding: 0 50px 0 30px;
+}
+%iform{
+  line-height: $base-forms-line-height;
+  height:  $base-forms-height;
+  @include padding(10px 39px 10px 15px);
+  border: 2px $turquoise $base-border-color;
+  border-radius: $border-radius-base;
+  @include prefixer(box-shadow, none);
+  outline: none;
+}
 fieldset {
   background-color: transparent;
   border: 0;
@@ -27,23 +44,20 @@ textarea {
 
 #{$all-text-inputs},
 select[multiple] {
+  @include span-columns(12);
   background-color: $base-background-color;
   border: none;
   border-bottom: $base-border;
   border-radius: 0;
-  box-shadow: none;
   box-sizing: border-box;
-  margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
-  width: 100%;
-
+  @extend %base-forms;
   &:hover {
-    border-color: shade($base-border-color, 20%);
+    border-color: shade($turquoise, 20%);
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: $turquoise;
     box-shadow: none;
     outline: none;
   }
@@ -60,6 +74,10 @@ select[multiple] {
 
 textarea {
   resize: vertical;
+  line-height: 1em;
+  height:      6em;
+  @include padding(1em 1em 1em 1em);
+  text-underline: black dash;
 }
 
 [type="search"] {
@@ -81,13 +99,7 @@ select {
   margin-bottom: $small-spacing;
   max-width: 100%;
   width: 40%;
-  line-height: 1.4em;
-  height:  2.8em;
-  @include padding(10px 39px 10px 15px);
-  border: 2px $turquoise $base-border-color;
-  border-radius: $border-radius-base;
-  @include prefixer(box-shadow, none);
-  outline: none;
+  @extend %iform;
   background-color: $turquoise;
   color: $inverse;
 }

@@ -1,9 +1,13 @@
+// forms configurations
+$base-forms-height: 2.8em;
+$base-forms-line-height: 1.4em;
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
-$base-font-family: $font-stack-system;
+//$base-font-family: $font-stack-system;
+$base-font-family: 'Abel', sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -107,7 +111,8 @@ $link-hover-color:          $turquoise;
 
 //## Font, line-height for body text, headings, and more.
 
-$font-family-base:          "Lato", Helvetica, Arial, sans-serif;
+//$font-family-base:          "Lato", Helvetica, Arial, sans-serif;
+$font-family-base:          'Abel', sans-serif;
 $font-family-demo:          "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-monospace:     Monaco, Menlo, Consolas, "Courier New", monospace;
 $font-size-base:            18px;

@@ -1,18 +1,13 @@
 .mtr-dropdown{
-   @include span-columns(4);
+  @include span-columns(12);
   background: #999;
   .outer-container{
     cursor: pointer;
-    span{
-      width: 100%;
-      height: 60px;
-      line-height: 60px;
+    .mtr-dropdown-span{
+      //width: 100%;
       color: $inverse;
-      font-weight: 700;
-      font-size: 16px;
       background: $turquoise;
-      display: block;
-      padding: 0 50px 0 30px;
+      @extend %base-forms;
       position: relative;
       cursor: pointer;
       &:after{
@@ -28,34 +23,38 @@
         line-height: 24px;
         border-left: 1px solid #ddd;
       }//span:after
+
     }//span
   }//outer-container
-  .active {
-    span:after{
-      content: '\25B2';
-    }
-  }
+
   ul{
     background: #999;
-    //margin-top: -.5em;
-    //@include prefixer(border-top, 2px solid #999);
     li{
       width: 100%;
       height: 60px;
       line-height: 60px;
-      color: $inverse;
+      color: $turquoise;
       font-weight: 700;
       font-size: 16px;
-      background: $turquoise;
+      background: $inverse;
       display: block;
-      padding: 0 50px 0 30px;
+      padding: 0 0px 0 30px;
       position: relative;
       cursor: pointer;
-      margin-top: .5em;
-      span{
-        position: absolute;
-        right: 1.5em;
-
+      border-bottom: 2px solid $turquoise;
+      &:hover{
+        background: $turquoise;
+        color: $inverse;
+        @include prefixer(transition, color .5s ease-in);
+      }
+      div{
+        width: 100%;
+        height: 100%;
+        span{
+          position: absolute;
+          font-size: 1.4em;
+          right: 1.5em;
+        }
       }
     }//li
   }//ul
