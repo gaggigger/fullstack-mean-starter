@@ -30,9 +30,3 @@ if [ -f "${OPENSHIFT_REPO_DIR}"/package.json ]; then
    (cd "${OPENSHIFT_REPO_DIR}"; export TMPDIR="/tmp"; npm install -d)
 fi
 
-OLD_HOME=$HOME
-export HOME=$OPENSHIFT_REPO_DIR
-if [ -f "${OPENSHIFT_REPO_DIR}"/gulpfile.bable.js ]; then
- (cd "${OPENSHIFT_REPO_DIR}"; node_modules/.bin/gulp)
-fi
-export HOME=$OLD_HOME
