@@ -15,7 +15,7 @@ describe('Component: LoginComponent', function () {
     });
   }));
 
-  it('should ...', function () {
-    expect(1).to.equal(1);
+  it('should ', function () {
+    // expect(1).to.equal(1);
   });
 });

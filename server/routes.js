@@ -3,7 +3,7 @@
  */
 
 'use strict';
-require('babel-core/register');
+
 import errors from './components/errors';
 import path from 'path';
 

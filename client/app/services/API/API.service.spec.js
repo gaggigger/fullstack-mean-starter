@@ -6,13 +6,14 @@ describe('Service: API', function () {
   beforeEach(module('mokaApp'));
 
   // instantiate service
-  var API;
+  let API;
+  let things;
   beforeEach(inject(function (_API_) {
     API = _API_;
   }));
 
-  it('should do something', function () {
+  it('should see API service was injected', function () {
     expect(!!API).to.be.true;
   });
-
+  
 });
