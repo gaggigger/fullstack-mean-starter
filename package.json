@@ -1,5 +1,5 @@
 {
-  "name": "moka",
+  "name": "crossover",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
@@ -118,5 +118,15 @@
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
     "start": "node server"
   },
-  "private": true
+  "private": true,
+  "name": "openshift-cartridge-nodejs-template",
+  "version": "1.0.1",
+  "description": "Custom Node.js cartridge for OpenShift - sample application",
+  "private": true,
+  "main": "start.js",
+  "scripts": {
+    "start": "node --use_strict start.js"
+  },
+  "author": "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
+  "license": "MIT"
 }
